@@ -7,9 +7,22 @@ import { evaluate } from "mathjs";
 function App() {
 
   const [input, setInput] = useState("");
+  const [fontSize, setFontSize] = useState(60);
 
   const agregarInput = val => {
     setInput(input + val);
+
+    const divPantalla = document.getElementById("divPantalla");
+    divPantalla.innerHTML = input;
+
+    if (divPantalla.scrollWidth > divPantalla.offsetWidth) {
+      setFontSize(fontSize - 5);
+    }
+  };
+
+  const clearPantalla = () => {
+    setInput("");
+    setFontSize(60);
   };
 
   const calcularResultado = () => {
@@ -27,9 +40,9 @@ function App() {
   return (
     <div className="App">
         <div className="contenedor-calculadora">
-          <Pantalla input={input}/>
+          <Pantalla fontSize={`${fontSize}px`} input={input}/>
           <div className="fila">
-            <Boton manejarClick={() => setInput("")}>AC</Boton>
+            <Boton manejarClick={clearPantalla}>AC</Boton>
             <Boton manejarClick={() => setInput(input.substring(0, input.length - 1))}>CE</Boton>
             <Boton manejarClick={agregarInput}>%</Boton>
             <Boton manejarClick={agregarInput}>/</Boton>

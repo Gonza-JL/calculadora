@@ -1,9 +1,9 @@
 import React from "react";
 import "../style-sheets/Pantalla.css";
 
-const Pantalla = ({ input }) => (
-	<div className="input">
-		{input}
+const Pantalla = (props) => (
+	<div id="divPantalla" className="input" style={{fontSize: props.fontSize}}>
+		{props.input}
 	</div>
 );
 
