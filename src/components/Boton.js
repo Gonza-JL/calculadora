@@ -21,7 +21,7 @@ function Boton(props) {
   );
 }
 
-function esOperador(valor) {
+export function esOperador(valor) {
   return valor === "+" || valor === "-" || valor === "*" || valor === "/";
 }
 

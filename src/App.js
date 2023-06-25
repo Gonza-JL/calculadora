@@ -1,6 +1,7 @@
 import "./App.css";
 import Boton from "./components/Boton";
 import Pantalla from "./components/Pantalla";
+import { esOperador } from "./components/Boton";
 import { useState } from "react";
 import { evaluate } from "mathjs";
 
@@ -8,16 +9,27 @@ function App() {
 
   const [input, setInput] = useState("");
   const [fontSize, setFontSize] = useState(60);
+  const [isResult, setIsResult] = useState(false);
 
-  const agregarInput = val => {
-    setInput(input + val);
-
+  const updateFontSize = () => {
     const divPantalla = document.getElementById("divPantalla");
     divPantalla.innerHTML = input;
 
     if (divPantalla.scrollWidth > divPantalla.offsetWidth) {
       setFontSize(fontSize - 5);
     }
+  };
+
+  const agregarInput = val => {
+    if (isResult && !esOperador(val)) {
+      setInput(val);
+      setFontSize(60);
+    } else {
+      setInput(input + val);
+    }
+    setIsResult(false);
+    
+    updateFontSize();
   };
 
   const clearPantalla = () => {
@@ -29,11 +41,12 @@ function App() {
     if (input) {
       try {
         setInput(evaluate(input).toString());
+        setIsResult(true);
       } catch {
-        alert("Operación inválida.")
+        alert("Operación inválida.");
       }
     } else {
-      alert("Por favor ingrese valores para calcularlos.")
+      alert("Por favor ingrese valores para calcularlos.");
     }
   };
 
