@@ -40,35 +40,37 @@ function App() {
   return (
     <div className="App">
         <div className="contenedor-calculadora">
-          <Pantalla fontSize={`${fontSize}px`} input={input}/>
+          <Pantalla input={input} fontSize={`${fontSize}px`} />
           <div className="fila">
-            <Boton manejarClick={clearPantalla}>AC</Boton>
-            <Boton manejarClick={() => setInput(input.substring(0, input.length - 1))}>CE</Boton>
+            <Boton manejarClick={agregarInput}>(</Boton>
+            <Boton manejarClick={agregarInput}>)</Boton>
             <Boton manejarClick={agregarInput}>%</Boton>
-            <Boton manejarClick={agregarInput}>/</Boton>
+            <Boton manejarClick={clearPantalla}>AC</Boton>
           </div>
           <div className="fila">
             <Boton manejarClick={agregarInput}>7</Boton>
             <Boton manejarClick={agregarInput}>8</Boton>
             <Boton manejarClick={agregarInput}>9</Boton>
-            <Boton manejarClick={agregarInput}>*</Boton>
+            <Boton manejarClick={agregarInput}>/</Boton>
           </div>
           <div className="fila">
             <Boton manejarClick={agregarInput}>4</Boton>
             <Boton manejarClick={agregarInput}>5</Boton>
             <Boton manejarClick={agregarInput}>6</Boton>
-            <Boton manejarClick={agregarInput}>-</Boton>
+            <Boton manejarClick={agregarInput}>*</Boton>
           </div>
           <div className="fila">
             <Boton manejarClick={agregarInput}>1</Boton>
             <Boton manejarClick={agregarInput}>2</Boton>
             <Boton manejarClick={agregarInput}>3</Boton>
-            <Boton manejarClick={agregarInput}>+</Boton>
+            
+            <Boton manejarClick={agregarInput}>-</Boton>
           </div>
           <div className="fila">
             <Boton manejarClick={agregarInput}>0</Boton>
             <Boton manejarClick={agregarInput}>.</Boton>
             <Boton manejarClick={calcularResultado}>=</Boton>
+            <Boton manejarClick={agregarInput}>+</Boton>
           </div>
         </div>
     </div>
