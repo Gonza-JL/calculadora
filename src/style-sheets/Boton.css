@@ -24,3 +24,11 @@
 .operador:hover {
 	background-color: #ffda76;
 }
+
+.boton-especial {
+	background-color: rgb(52, 140, 241);
+}
+
+.boton-especial:hover {
+	background-color: rgb(120, 183, 255);
+}
