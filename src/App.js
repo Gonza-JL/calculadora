@@ -11,15 +11,6 @@ function App() {
   const [fontSize, setFontSize] = useState(60);
   const [isResult, setIsResult] = useState(false);
 
-  const updateFontSize = () => {
-    const divPantalla = document.getElementById("divPantalla");
-    divPantalla.innerHTML = input;
-
-    if (divPantalla.scrollWidth > divPantalla.offsetWidth) {
-      setFontSize(fontSize - 5);
-    }
-  };
-
   const agregarInput = val => {
     if (isResult && !esOperador(val)) {
       setInput(val);
@@ -29,7 +20,12 @@ function App() {
     }
     setIsResult(false);
     
-    updateFontSize();
+    const divPantalla = document.getElementById("divPantalla");
+    divPantalla.innerHTML = input;
+
+    if (divPantalla.scrollWidth > divPantalla.offsetWidth) {
+      setFontSize(fontSize - 5);
+    }
   };
 
   const clearPantalla = () => {

@@ -1,8 +1,10 @@
 .input {
-	width: 360px;
-	height: 75px;
+	width: 320px;
+	height: 95px;
 	display: grid;
 	place-items: center;
 	color: white;
 	margin: 5px;
+	padding-left: 20px;
+	overflow: auto;
 }

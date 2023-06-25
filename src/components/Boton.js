@@ -13,8 +13,7 @@ function Boton(props) {
 	}
 
   return (
-    <div
-      className={`boton-contenedor ${claseAdicional}`.trimEnd()}
+    <div className={`boton-contenedor ${claseAdicional}`.trimEnd()}
       onClick={() => props.manejarClick(props.children)}>
       {props.children}
     </div>
