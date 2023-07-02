@@ -6,12 +6,11 @@ import { useState } from "react";
 import { evaluate } from "mathjs";
 
 function App() {
-
   const [input, setInput] = useState("");
   const [fontSize, setFontSize] = useState(60);
   const [isResult, setIsResult] = useState(false);
 
-  const agregarInput = val => {
+  const agregarInput = (val) => {
     if (isResult && !esOperador(val)) {
       setInput(val);
       setFontSize(60);
@@ -19,7 +18,7 @@ function App() {
       setInput(input + val);
     }
     setIsResult(false);
-    
+
     const divPantalla = document.getElementById("divPantalla");
     divPantalla.innerHTML = input;
 
@@ -48,40 +47,39 @@ function App() {
 
   return (
     <div className="App">
-        <div className="contenedor-calculadora">
-          <Pantalla input={input} fontSize={`${fontSize}px`} />
-          <div className="fila">
-            <Boton manejarClick={agregarInput}>(</Boton>
-            <Boton manejarClick={agregarInput}>)</Boton>
-            <Boton manejarClick={agregarInput}>%</Boton>
-            <Boton manejarClick={clearPantalla}>AC</Boton>
-          </div>
-          <div className="fila">
-            <Boton manejarClick={agregarInput}>7</Boton>
-            <Boton manejarClick={agregarInput}>8</Boton>
-            <Boton manejarClick={agregarInput}>9</Boton>
-            <Boton manejarClick={agregarInput}>/</Boton>
-          </div>
-          <div className="fila">
-            <Boton manejarClick={agregarInput}>4</Boton>
-            <Boton manejarClick={agregarInput}>5</Boton>
-            <Boton manejarClick={agregarInput}>6</Boton>
-            <Boton manejarClick={agregarInput}>*</Boton>
-          </div>
-          <div className="fila">
-            <Boton manejarClick={agregarInput}>1</Boton>
-            <Boton manejarClick={agregarInput}>2</Boton>
-            <Boton manejarClick={agregarInput}>3</Boton>
-            
-            <Boton manejarClick={agregarInput}>-</Boton>
-          </div>
-          <div className="fila">
-            <Boton manejarClick={agregarInput}>0</Boton>
-            <Boton manejarClick={agregarInput}>.</Boton>
-            <Boton manejarClick={calcularResultado}>=</Boton>
-            <Boton manejarClick={agregarInput}>+</Boton>
-          </div>
+      <div className="contenedor-calculadora">
+        <Pantalla input={input} fontSize={`${fontSize}px`} />
+        <div className="fila">
+          <Boton manejarClick={agregarInput}>(</Boton>
+          <Boton manejarClick={agregarInput}>)</Boton>
+          <Boton manejarClick={agregarInput}>%</Boton>
+          <Boton manejarClick={clearPantalla}>AC</Boton>
         </div>
+        <div className="fila">
+          <Boton manejarClick={agregarInput}>7</Boton>
+          <Boton manejarClick={agregarInput}>8</Boton>
+          <Boton manejarClick={agregarInput}>9</Boton>
+          <Boton manejarClick={agregarInput}>/</Boton>
+        </div>
+        <div className="fila">
+          <Boton manejarClick={agregarInput}>4</Boton>
+          <Boton manejarClick={agregarInput}>5</Boton>
+          <Boton manejarClick={agregarInput}>6</Boton>
+          <Boton manejarClick={agregarInput}>*</Boton>
+        </div>
+        <div className="fila">
+          <Boton manejarClick={agregarInput}>1</Boton>
+          <Boton manejarClick={agregarInput}>2</Boton>
+          <Boton manejarClick={agregarInput}>3</Boton>
+          <Boton manejarClick={agregarInput}>-</Boton>
+        </div>
+        <div className="fila">
+          <Boton manejarClick={agregarInput}>0</Boton>
+          <Boton manejarClick={agregarInput}>.</Boton>
+          <Boton manejarClick={calcularResultado}>=</Boton>
+          <Boton manejarClick={agregarInput}>+</Boton>
+        </div>
+      </div>
     </div>
   );
 }

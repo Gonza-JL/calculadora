@@ -1,26 +1,26 @@
 .App {
-    display: flex;
-    height: 100vh;
-    padding-top: 10px;
-    background-color: #141414;
-    font-family: Lato, sans-serif;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  height: 100vh;
+  padding-top: 10px;
+  background-color: #141414;
+  font-family: Lato, sans-serif;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 }
 
 .contenedor-calculadora {
-    width: 370px;
-    height: 580px;
-    padding: 14px;
-    background-color: #141414;
-    border-radius: 60px;
-    border: 5px solid white;
+  width: 370px;
+  height: 580px;
+  padding: 14px;
+  background-color: #141414;
+  border-radius: 60px;
+  border: 5px solid white;
 }
 
 .fila {
-    margin: 4px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  margin: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
