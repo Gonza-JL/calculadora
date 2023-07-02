@@ -14,4 +14,4 @@ El objetivo principal de este mini proyecto fue aprender y practicar el desarrol
 
 ## Acceso a la calculadora
 
-Para utilizar la calculadora puede acceder al siguiente enlace: [Calculadora](https://www.ejemplo.com/calculadora).
+Para utilizar la calculadora puede acceder al siguiente enlace: [Calculadora](https://gonza-jl.github.io/calculadora/).
