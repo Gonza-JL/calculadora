@@ -9,7 +9,6 @@ El objetivo principal de este mini proyecto fue aprender y practicar el desarrol
 ## Características principales
 
 - Suma, resta, multiplicación y división de números enteros y decimales.
-- Utilización del operador de porcentaje (%).
 - Posibilidad de borrar y editar operaciones anteriores.
 - Manejo de paréntesis para operaciones más complejas.
 
