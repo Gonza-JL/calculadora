@@ -35,7 +35,8 @@ function App() {
   const calcularResultado = () => {
     if (input) {
       try {
-        setInput(evaluate(input).toString());
+        let operacion = input.replace(/[× ÷]/g, (char) => { return char === "×" ? "*" : "/"; });
+        setInput(evaluate(operacion).toString());
         setIsResult(true);
       } catch {
         alert("Operación inválida.");
@@ -59,13 +60,13 @@ function App() {
           <Boton manejarClick={agregarInput}>7</Boton>
           <Boton manejarClick={agregarInput}>8</Boton>
           <Boton manejarClick={agregarInput}>9</Boton>
-          <Boton manejarClick={agregarInput}>/</Boton>
+          <Boton manejarClick={agregarInput}>÷</Boton>
         </div>
         <div className="fila">
           <Boton manejarClick={agregarInput}>4</Boton>
           <Boton manejarClick={agregarInput}>5</Boton>
           <Boton manejarClick={agregarInput}>6</Boton>
-          <Boton manejarClick={agregarInput}>*</Boton>
+          <Boton manejarClick={agregarInput}>×</Boton>
         </div>
         <div className="fila">
           <Boton manejarClick={agregarInput}>1</Boton>

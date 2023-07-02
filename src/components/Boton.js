@@ -3,11 +3,8 @@ import "../style-sheets/Boton.css";
 
 function Boton(props) {
   let claseAdicional = "";
-  if (esOperador(props.children)) {
-    claseAdicional = "operador";
-  } else if (esBotonEspecial(props.children)) {
-    claseAdicional = "boton-especial";
-  }
+  if (esOperador(props.children)) claseAdicional = "operador";
+  else if (esBotonEspecial(props.children)) claseAdicional = "boton-especial";
 
   return (
     <div
@@ -20,7 +17,7 @@ function Boton(props) {
 }
 
 export function esOperador(valor) {
-  return valor === "+" || valor === "-" || valor === "*" || valor === "/";
+  return valor === "+" || valor === "-" || valor === "×" || valor === "÷";
 }
 
 function esBotonEspecial(valor) {
